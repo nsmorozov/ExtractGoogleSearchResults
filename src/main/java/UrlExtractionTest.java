@@ -1,5 +1,7 @@
 
 import Extractor.ExtractedDataSet;
+import Extractor.GoogleSearchPage;
+import Extractor.PageElements;
 import Extractor.SeleniumDataExtractor;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -11,8 +13,8 @@ public class UrlExtractionTest {
 
         System.setProperty("webdriver.chrome.driver", "/Users/nmorozov/IdeaProjects/chromedriver");
         System.setProperty("selenide.browser", "Chrome");
-        open("http://google.com");
-        ExtractedDataSet dataSet = new DataExtractor(new SeleniumDataExtractor()).extract();
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage("http://google.com");
+        ExtractedDataSet dataSet = new DataExtractor(new SeleniumDataExtractor()).extractFrom(googleSearchPage, PageElements.LINK);
 
     }
 

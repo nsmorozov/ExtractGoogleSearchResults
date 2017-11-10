@@ -2,5 +2,5 @@ package Extractor;
 
 public interface PageDataExtractor {
 
-    ExtractedDataSet extract();
+    ExtractedDataSet extract(AbstractPage page, PageElements elements);
 }

@@ -1,5 +1,7 @@
+import Extractor.AbstractPage;
 import Extractor.ExtractedDataSet;
 import Extractor.PageDataExtractor;
+import Extractor.PageElements;
 
 public class DataExtractor {
 
@@ -9,15 +11,15 @@ public class DataExtractor {
         this.extractor = extractor;
     }
 
-    ExtractedDataSet extract(){
+    ExtractedDataSet extractFrom(AbstractPage source, PageElements link){
 
         ExtractedDataSet dataSet = null;
-
         try {
-            dataSet = extractor.extract();
+            dataSet = extractor.extract(source, link);
         }catch(Exception ex){
-            System.out.println("Cannot extract data as extractor might not be initialized");
+            System.out.println("Cannot extractFrom data as extractor might not be initialized");
         }
+
         return dataSet;
     }
 }
