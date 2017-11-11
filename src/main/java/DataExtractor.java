@@ -11,11 +11,11 @@ public class DataExtractor {
         this.extractor = extractor;
     }
 
-    ExtractedDataSet extractFrom(AbstractPage source, PageElements link){
+    ExtractedDataSet extractFrom(AbstractPage source){
 
         ExtractedDataSet dataSet = null;
         try {
-            dataSet = extractor.extract(source, link);
+            dataSet = extractor.extract(source);
         }catch(Exception ex){
             System.out.println("Cannot extractFrom data as extractor might not be initialized");
         }

@@ -8,18 +8,18 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class GoogleSearchPage implements AbstractPage {
 
-    private String url;
+    public static final String GOOGLE_HOME = "https://google.com";
+    private String searchTerm;
     public static final String searchItem = "div.srg div.g ._Rm";
 
 
-    public GoogleSearchPage(String url) {
-        this.url = url;
+    public GoogleSearchPage(String searchTerm) {
+        this.searchTerm = searchTerm;
     }
 
+    public ExtractedDataSet extract(){
 
-    public ExtractedDataSet extract(PageElements elements){
-
-        open(url);
+        open(GOOGLE_HOME + "/search?q=" + searchTerm);
         ExtractedDataSet dataSet = new ExtractedDataSet();
         ElementsCollection links = $$(searchItem);
         links.shouldHave(CollectionCondition.sizeGreaterThan(0));

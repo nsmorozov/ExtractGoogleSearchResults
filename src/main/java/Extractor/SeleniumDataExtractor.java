@@ -2,9 +2,9 @@ package Extractor;
 
 public class SeleniumDataExtractor implements PageDataExtractor {
 
-    public ExtractedDataSet extract(AbstractPage page, PageElements elements) {
+    public ExtractedDataSet extract(AbstractPage page) {
 
-        page.extract(elements);
+        page.extract();
         return new ExtractedDataSet();
     }
 
