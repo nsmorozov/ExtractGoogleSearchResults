@@ -8,10 +8,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class GoogleSearchPage implements AbstractPage {
 
-    public static final String GOOGLE_HOME = "https://google.com";
+    private static final String GOOGLE_HOME = "https://google.com";
+    private static final String searchItem = "div.srg div.g ._Rm";
     private String searchTerm;
-    public static final String searchItem = "div.srg div.g ._Rm";
-
 
     public GoogleSearchPage(String searchTerm) {
         this.searchTerm = searchTerm;
