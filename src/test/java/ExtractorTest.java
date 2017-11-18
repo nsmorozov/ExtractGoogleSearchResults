@@ -1,8 +1,6 @@
 import Extractor.ExtractedDataSet;
 import Extractor.GoogleSearchPage;
 import Extractor.SeleniumDataExtractor;
-import com.codeborne.selenide.SelenideElement;
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -19,8 +17,8 @@ public class ExtractorTest {
         ExtractedDataSet dataSetTest = new ExtractedDataSet();
         dataSetTest.add($("Fake"));
         GoogleSearchPage googleSearchPage =  Mockito.mock(GoogleSearchPage.class);
-        SeleniumDataExtractor seleniumDataExtractor = Mockito.mock(SeleniumDataExtractor.class);
-        DataExtractor dataExtractor = Mockito.mock(DataExtractor.class);
+        SeleniumDataExtractor seleniumDataExtractor = new SeleniumDataExtractor();
+        DataExtractor dataExtractor = new DataExtractor(seleniumDataExtractor);
         Mockito.when(dataExtractor.extractFrom(googleSearchPage)).thenReturn(dataSetTest);
         System.out.println(dataExtractor.extractFrom(googleSearchPage).getList().size());
 

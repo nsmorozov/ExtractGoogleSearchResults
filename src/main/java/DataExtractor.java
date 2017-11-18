@@ -1,7 +1,6 @@
 import Extractor.AbstractPage;
 import Extractor.ExtractedDataSet;
 import Extractor.PageDataExtractor;
-import Extractor.PageElements;
 
 public class DataExtractor {
 

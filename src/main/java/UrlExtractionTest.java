@@ -1,7 +1,6 @@
 
 import Extractor.ExtractedDataSet;
 import Extractor.GoogleSearchPage;
-import Extractor.PageElements;
 import Extractor.SeleniumDataExtractor;
 
 import static com.codeborne.selenide.Selenide.open;
